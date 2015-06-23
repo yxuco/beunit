@@ -1,11 +1,11 @@
-This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO BusinessEvents](https://docs.tibco.com/products/tibco-businessevents-5-2-0) (BE) applications.  It contains JUnit tests for demonstrating a BE test framework illustrated by the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo).  The DataTypeDemo application exposes BE test cases as a REST API, while this project demonstrate how to use JUnit test runner to invoke the REST API, execute BE tests and display results in the TIBCO BusinessEvents Studio or a standalone [Eclipse](https://eclipse.org/).  Since JUnit is integrated with almost all tools for Continuous Integration (CI), these tests can be executed by, e.g., [Maven](https://maven.apache.org/) or [Jenkins](https://jenkins-ci.org/).
+This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO BusinessEvents](https://docs.tibco.com/products/tibco-businessevents-5-2-0) (BE) applications.  It contains JUnit tests for demonstrating a BE test framework illustrated by the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo).  The DataTypeDemo application exposes BE test cases as a REST API, while this project demonstrates how to use JUnit test runner to invoke the REST API, execute BE tests and display results in the TIBCO BusinessEvents Studio or a standalone [Eclipse](https://eclipse.org/).  Since JUnit is integrated with almost all tools for Continuous Integration (CI), these tests can be executed by, e.g., [Maven](https://maven.apache.org/) or [Jenkins](https://jenkins-ci.org/).
 
 ## Dependencies
 
 #### Maven
-This is a Maven project, and so if maven has not been installed yet, you'll need to follow the instructions at [Maven Download](https://maven.apache.org/download.cgi) to download and install Maven.
+This is a Maven project, and so if maven has not been installed on your system, you'll need to follow the instructions at [Maven Download](https://maven.apache.org/download.cgi) to download and install Maven.
 
-On my Mac, I unzipped the Maven binary distribution in `/usr/local//usr/local/apache-maven-3.2.1`, and then created a symbolic link
+On my Mac, I unzipped the Maven binary distribution in `/usr/local/apache-maven-3.2.1`, and then created a symbolic link
 
     ln -s /usr/local/apache-maven-3.2.1 /usr/local/maven
 
@@ -35,13 +35,13 @@ Check if Git is installed on your system using the command
 
     git --version
 
-It should print out the version of the installed Git, e.g.,
+It should print out the version number of the Git installation, e.g.,
 
     git version 2.3.5
 
 If necessary, you can download and install Git by following steps at [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-At the root of your workspace, clone the project using the command
+In the root folder of your workspace, clone the project using the command
 
     git clone https://github.com/yxuco/beunit.git
 
@@ -50,12 +50,17 @@ It should download the source code to the folder `beunit` in your workspace. Use
     cd beunit
     mvn clean compile
 
-The Maven build should be successful, and this step also downloads required packages from the [Maven Central](http://search.maven.org/).
+The Maven build should be successful, and this step also downloads dependency packages from the [Maven Central](http://search.maven.org/).
 
 Before we can test and package this utility, we need to get the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) running.
 
 #### DataTypeDemo
 [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) is a BE application that we use to demonstrate the BE test framework.  All tests would fail if the DataTypeDemo process is not running.  So, follow the steps described in [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) to configure and start the BE process.
+
+After the `DataTypeDemo` process is started, you can test and package this utility as follows:
+
+    cd beunit
+    mvn clean package
 
 ## Execute JUnit tests in Eclipse
  
@@ -64,11 +69,11 @@ You may execute JUnit tests in either a standalone Eclipse, or the TIBCO Busines
  - Launch the TIBCO BusinessEvents Studio, for example.
  - Pulldown **File** menu and select **Import...**
  - In the **Import** dialog, select **Existing Maven Projects**, then click **Next >** button.
- - In the **Import Maven Projects** dialog, Browse for **Root Directory**, select and Open the `beunit` folder under your workspace.
+ - In the **Import Maven Projects** dialog, browse for **Root Directory**, select and open the `beunit` folder under your workspace.
  - Confirm that `your-workspace/beunit` is populated as the **Root Directory**, then click the **Finish** button.
- - In **Package Explorer**, highlight the imported project **beunit**, and pulldown **Window** menu to open the Java Perspective.
- - In **Package Explorer**, open the `src/test/java` folder, select the file `DataTypeDemoTestSuite.java`, right-click it and select the popup menu **Run As**->**JUnit Test**.
- - You should see the famous Green/Red bar in the JUnit test panel.  All tests would fail if the DataTypeDemo process is not running.
+ - In **Package Explorer**, highlight the root folder of the imported project `beunit`, and pulldown **Window** menu to open the Java Perspective.
+ - In **Package Explorer**, open the `src/test/java` folder, select the file `DataTypeDemoTestSuite.java`, right-click it and select the popup menu **Run As** -> **JUnit Test**.
+ - You should see the famous Green/Red bar in the JUnit test panel.  All tests would fail if the `DataTypeDemo` process is not running.
 
 ## The author
 
