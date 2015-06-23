@@ -6,16 +6,23 @@ This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO Busin
 This is a Maven project, so if maven has not been installed yet, you can follow the instructions at [Maven Download](https://maven.apache.org/download.cgi) to download and install Maven.
 
 On my Mac, I unzipped the Maven binary distribution in `/usr/local//usr/local/apache-maven-3.2.1`, and then created a symbolic link
+
     ln -s /usr/local/apache-maven-3.2.1 /usr/local/maven
+
 I then added the following Maven environment variables in `~/.bash_profile`
+
     export JAVA_HOME=/usr/local/java
     export M2_HOME=/usr/local/maven
     export MAVEN_OPTS="-Xms256m -Xmx512m"
     export PATH=$M2_HOME/bin:$PATH
+
 So if you use a different version of Maven, you can simply update the symbolic link.  Note that my `JAVA_HOME` is a symbolic link to `/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home`, which would likely be different from your environment.
 After it is done, you may verify the correct Maven environment by the command
+
     mvn --version
+
 It should print out something similar to
+
     Apache Maven 3.2.1 (ea8b2b07643dbb1b84b6d16e1f08391b666bc1e9; 2014-02-14T10:37:52-07:00)
     Maven home: /usr/local/maven
     Java version: 1.7.0_51, vendor: Oracle Corporation
@@ -25,16 +32,24 @@ It should print out something similar to
     
 #### Clone this project from GitHub
 Check if Git is installed on your system by the command
+
     git --version
+
 It should print out the version of the installed Git, e.g.,
+
     git version 2.3.5
+
 If necessary, you can download and install Git by following steps of [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 At the root of your workspace, clone the project using the command
+
     git clone https://github.com/yxuco/beunit.git
+
 It should download the source code to the folder `beunit` in your workspace. Use the following command to verify the develop environment
+
     cd beunit
     mvn clean compile
+
 The Maven build should be successful, and this step also downloads required packages from [Maven Central](http://search.maven.org/)
 
 Before we can test and package this utility, we need to get the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) running.
