@@ -1,4 +1,4 @@
-This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO BusinessEvents](https://docs.tibco.com/products/tibco-businessevents-5-2-0)(BE) applications.  It contains JUnit tests for demonstrating the BE test framework that is illustrated by the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo), which exposes BE test cases as a REST API.  This project demonstrates how to use JUnit test runner to execute BE test cases and display results in the TIBCO BusinessEvents Studio or a standalone [Eclipse](https://eclipse.org/).  Since JUnit is integrated with almost all tools for Continuous Integration (CI), these tests can be executed by, e.g., [Maven](https://maven.apache.org/) or [Jenkins](https://jenkins-ci.org/).
+This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO BusinessEvents](https://docs.tibco.com/products/tibco-businessevents-5-2-0) (BE) applications.  It contains JUnit tests for demonstrating a BE test framework illustrated by the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo).  The DataTypeDemo application exposes BE test cases as a REST API, while this project demonstrate how to use JUnit test runner to invoke the REST API, execute BE tests and display results in the TIBCO BusinessEvents Studio or a standalone [Eclipse](https://eclipse.org/).  Since JUnit is integrated with almost all tools for Continuous Integration (CI), these tests can be executed by, e.g., [Maven](https://maven.apache.org/) or [Jenkins](https://jenkins-ci.org/).
 
 ## Dependencies
 
@@ -17,7 +17,7 @@ I then added the following Maven environment variables in `~/.bash_profile`
     export PATH=$M2_HOME/bin:$PATH
 
 So if you use a different version of Maven, you can simply update the symbolic link.  Note that my `JAVA_HOME` is a symbolic link to `/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home`, which would likely be different from your environment.
-After it is done, you may verify the correct Maven environment by the command
+After it is done, you may verify the correct Maven environment using the command
 
     mvn --version
 
@@ -31,7 +31,7 @@ It should print out something similar to
     OS name: "mac os x", version: "10.10.3", arch: "x86_64", family: "mac"
     
 #### Clone this project from GitHub
-Check if Git is installed on your system by the command
+Check if Git is installed on your system using the command
 
     git --version
 
@@ -39,7 +39,7 @@ It should print out the version of the installed Git, e.g.,
 
     git version 2.3.5
 
-If necessary, you can download and install Git by following steps at [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+If necessary, you can download and install Git by following steps at [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 At the root of your workspace, clone the project using the command
 
@@ -50,14 +50,14 @@ It should download the source code to the folder `beunit` in your workspace. Use
     cd beunit
     mvn clean compile
 
-The Maven build should be successful, and this step also downloads required packages from [Maven Central](http://search.maven.org/)
+The Maven build should be successful, and this step also downloads required packages from the [Maven Central](http://search.maven.org/).
 
 Before we can test and package this utility, we need to get the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) running.
 
 #### DataTypeDemo
-[DataTypeDemo](https://github.com/yxuco/DataTypeDemo) is a BE application that we use to demonstrate the testing framework.  All tests would fail if the DataTypeDemo process is not running.  So, follow the steps described in [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) to configure and start the BE process.
+[DataTypeDemo](https://github.com/yxuco/DataTypeDemo) is a BE application that we use to demonstrate the BE test framework.  All tests would fail if the DataTypeDemo process is not running.  So, follow the steps described in [DataTypeDemo](https://github.com/yxuco/DataTypeDemo) to configure and start the BE process.
 
-## Execute JUnit tests from Eclipse
+## Execute JUnit tests in Eclipse
  
 You may execute JUnit tests in either a standalone Eclipse, or the TIBCO BusinessEvents Studio.
 
