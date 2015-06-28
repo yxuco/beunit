@@ -8,7 +8,7 @@ import com.tibco.psg.beunit.TestHelper;
 
 @RunWith(value = org.junit.runners.Suite.class)
 @SuiteClasses(value = { CreateObjectTest.class, UpdateObjectTest.class,
-		RuleTest.class })
+		RuleTest.class, SimpleHamcrestTest.class })
 public class DataTypeDemoTestSuite {
 
 	@BeforeClass

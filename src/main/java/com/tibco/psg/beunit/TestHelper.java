@@ -39,12 +39,14 @@ public class TestHelper {
 				});
 	}
 
-	public static void assertRuleFunction(String functionName, boolean isPreproc) throws Exception {
-		String msg = sendTestRequest(functionName, isPreproc);
-		if ("true".equals(msg)) {
-			org.junit.Assert.assertTrue(true);
-		} else {
-			org.junit.Assert.fail(msg);
+	public static void assertRuleFunction(String functionName, boolean isPreproc) {
+		try {
+			String msg = sendTestRequest(functionName, isPreproc);
+			if (!"true".equals(msg)) {
+				org.junit.Assert.fail(msg);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 	}
 }

@@ -8,12 +8,8 @@ public class UpdateObjectTest {
 
 	@Test
 	public void testAddDataToPrimitiveArray() {
-		try {
-			TestHelper.assertRuleFunction(
-					"/Test/UpdateObjectTest/testAddDataToPrimitiveArray",
-					true);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		TestHelper.assertRuleFunction(
+			"/Test/UpdateObjectTest/testAddDataToPrimitiveArray",
+			true);
 	}
 }

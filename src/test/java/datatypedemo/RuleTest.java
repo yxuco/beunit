@@ -9,31 +9,19 @@ public class RuleTest {
 
 	@BeforeClass
 	public static void setupUpdatePrimitiveItem() {
-		try {
-			TestHelper.assertRuleFunction(
-					"/Test/RuleTest/setupUpdatePrimitiveItem", true);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		TestHelper.assertRuleFunction(
+			"/Test/RuleTest/setupUpdatePrimitiveItem", true);
 	}
 
 	@Test
 	public void testUpdatePrimitiveItemInPreproc() {
-		try {
-			TestHelper.assertRuleFunction(
-					"/Test/RuleTest/testUpdatePrimitiveItemInPreproc", true);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		TestHelper.assertRuleFunction(
+			"/Test/RuleTest/testUpdatePrimitiveItemInPreproc", true);
 	}
 
 	@Test
 	public void testUpdatePrimitiveItemInRule() {
-		try {
-			TestHelper.assertRuleFunction(
-					"/Test/RuleTest/testUpdatePrimitiveItemInRule", false);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		TestHelper.assertRuleFunction(
+			"/Test/RuleTest/testUpdatePrimitiveItemInRule", false);
 	}
 }
