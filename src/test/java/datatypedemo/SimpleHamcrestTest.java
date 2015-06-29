@@ -103,4 +103,15 @@ public class SimpleHamcrestTest {
 			folder + "testTrueNotNullValue", true);
 	}
 
+	@Test
+	public void testFalseRegexMatch() {
+		TestHelper.assertRuleFunction(
+			folder + "testFalseRegexMatch", true);
+	}
+
+	@Test
+	public void testTrueRegexMatch() {
+		TestHelper.assertRuleFunction(
+			folder + "testTrueRegexMatch", true);
+	}
 }
