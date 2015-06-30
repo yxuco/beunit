@@ -113,5 +113,17 @@ public class SimpleHamcrestTest {
 	public void testTrueRegexMatch() {
 		TestHelper.assertRuleFunction(
 			folder + "testTrueRegexMatch", true);
+
+	}
+	@Test
+	public void testFalseCollectionLength() {
+		TestHelper.assertRuleFunction(
+			folder + "testFalseCollectionLength", true);
+	}
+
+	@Test
+	public void testTrueCollectionLength() {
+		TestHelper.assertRuleFunction(
+			folder + "testTrueCollectionLength", true);
 	}
 }
