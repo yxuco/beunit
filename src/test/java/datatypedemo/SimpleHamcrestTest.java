@@ -126,4 +126,16 @@ public class SimpleHamcrestTest {
 		TestHelper.assertRuleFunction(
 			folder + "testTrueCollectionLength", true);
 	}
+
+	@Test
+	public void testTrueListItemAt() {
+		TestHelper.assertRuleFunction(
+			folder + "testTrueListItemAt", true);
+	}
+
+	@Test
+	public void testTrueMapItemFor() {
+		TestHelper.assertRuleFunction(
+			folder + "testTrueMapItemForKey", true);
+	}
 }
