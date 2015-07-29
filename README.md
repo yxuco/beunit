@@ -1,3 +1,4 @@
+# beunit
 This is a Java utility that uses [JUnit](http://junit.org/) to test [TIBCO BusinessEvents](https://docs.tibco.com/products/tibco-businessevents-5-2-0) (BE) applications.  It contains JUnit tests for demonstrating a BE test framework illustrated by the BE project [DataTypeDemo](https://github.com/yxuco/DataTypeDemo).  The DataTypeDemo application exposes BE test cases as a REST API, while this project demonstrates how to use JUnit test runner to invoke the REST API, execute BE tests and display results in the TIBCO BusinessEvents Studio or a standalone [Eclipse](https://eclipse.org/).  Since JUnit is integrated with almost all tools for Continuous Integration (CI), these tests can be executed by, e.g., [Maven](https://maven.apache.org/) or [Jenkins](https://jenkins-ci.org/).
 
 ## Dependencies
